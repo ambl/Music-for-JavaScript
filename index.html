@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="ja"><head><title>Music for JavaScript</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /></head><body style="background:#eee;padding:0px;margin:0px">
+<div style="padding:5px;margin:5px">
+
+<!-- ここから -->
+<style>
+.player-container{display:flex;margin:0;padding:0.5rem;background:#ddd}
+.canvas-container{width:256px;}
+.canvas-container canvas{cursor:pointer; border: none; display: block; margin: 0; background: black; user-select: none;}
+.audio-container{visibility:hidden;width:300px;margin-left:1em;font-size:small;}
+.control-container{clear:both;}
+.control-container input{font-size:12px;padding:0;width:7em;text-align:right;}
+.pointer{cursor:pointer;}
+.audio-container button{margin-bottom:0.5em}
+.audio-container audio{width:100%;}
+</style>
+<div class="player-container">
+    <div class="canvas-container"><canvas width="256" height="160">canvas</canvas></div>
+    <div class="audio-container">
+        <div class="control-container">
+            <input type="number" class="num-channels-input">ch(mono/stereo)<br>
+            <input type="number" class="sample-rate-input">Hz(サンプルレート)<br>
+            <input type="number" class="bit-input">bits/sample<br>
+            <input type="number" class="length-input">(曲の長さ)<br>
+        </div>
+        <div style="margin-top:8px">
+            <button title="アナライザーを変えます" class="analyser pointer">📉アナライザー変更</button>
+            <button title="生成し直します" class="regenerate pointer">🔄作り直し</button><br>
+            <label title="リピート再生します"><input type="checkbox" class="repeat-checkbox" style="display:inline-block">🔁リピート</label>
+            <a title="ファイルを保存します" class="download-a" download="title.wav" style="text-decoration:none">💾保存</a>
+        </div>
+        <audio  style="margin-top:8px;display:none" controls>
+            <source type = "audio/wav">
+        </audio>
+    </div>
+    <script src="player.js"></script>     <!-- 1. 削除する -->
+    <script>
+        const scoreScriptUrl = "score.js";
+        const singleFileMode = false;// 2.trueにする
+        const container = document.currentScript.parentElement;
+        window.addEventListener("load", player);
+        //3. player.js コピペ 
+        function studioContainer(){
+            //4. studio.jsをコピペ
+        }
+        function worker(){
+            //5. score.jsをコピペ
+        }
+
+    </script>
+</div>
+<!-- ここまで -->
+
+
+</div></body></html>
